@@ -60,6 +60,7 @@ messageForm.addEventListener("submit", (event) => {
     const editButton = document.createElement("button");
     editButton.textContent = "edit";
     editButton.type = "button";
+    editButton.className = "edit-button";
 
     const editForm = document.createElement("form");
     const editInput = document.createElement("input");

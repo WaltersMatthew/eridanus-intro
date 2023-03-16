@@ -1,0 +1,97 @@
+body {
+    background-color: chartreuse;
+    color: hotpink;
+    font-family: "Raleway", sans-serif;
+}
+
+section {
+    margin: 5rem;
+    padding: 20px;
+}
+h1 {
+    font-family: "Seaweed Script", sans-serif;
+    font-size: 4rem;
+    font-weight: bold;
+    color: dodgerblue;
+    text-align: center;
+}
+h2 {
+    font-family: "Courier New", Courier, monospace;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.experience li {
+    text-align: center;
+    border: 5px solid burlywood;
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 5px;
+    background-color: lemonchiffon;
+    list-style-type: none;
+}
+
+#skills li {
+    text-align: center;
+    border: 1px dashed brown;
+    margin: 20px 0;
+    padding: 50px;
+    list-style-type: none;
+    border-radius: 500px;
+    max-width: fit-content;
+}
+#skills li:hover {
+    background-color: black;
+    color: white;
+}
+label {
+    background-color: blanchedalmond;
+    color: darkgoldenrod;
+}
+
+input {
+    font-size: 3rem;
+    padding: 25px;
+    border: 10px solid black;
+}
+input:focus {
+    border: none;
+}
+.button {
+    padding: 25px;
+    margin-top: 10px;
+    background-color: aquamarine;
+    color: mediumorchid;
+    font-size: 2rem;
+}
+.button:hover {
+    background-color: red;
+    color: yellow;
+}
+
+footer {
+    background-color: #666;
+    margin-top: 20px;
+    padding: 20px;
+}
+img {
+    border: 5px solid powderblue;
+    border-style: inset;
+    border-radius: 150px;
+    box-shadow: 10px 5px 10px black;
+}
+placeholder {
+    color: green;
+}
+.edit-button {
+    padding: 50px;
+    background-color: dodgerblue;
+}
+a {
+    text-decoration: none;
+}
+a:hover {
+    color: black;
+}
+a:visted {
+    color: purple;
+}
