@@ -3,8 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="author" content="Matt Walters" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>CTD Portfolio</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1"        <title>CTD Portfolio</title>
         <link rel="stylesheet" href="css/index.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,10 +13,29 @@
         />
     </head>
     <body>
+        <nav>
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="#about">About</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#experience">Experience</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#skills">Skills</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="www.google.com">Contact Me</a>
+                </li>
+            </ul>
+        </nav>
         <h1>Matthew Walters</h1>
 
         <img src="https://placekitten.com/300/300" />
-        <section>
+        <section id="about">
             <h2>About</h2>
             <p>
                 I am Matt Walters, professional JavaScript developer and
@@ -30,7 +48,7 @@
             </p>
         </section>
 
-        <section>
+        <section id="experience">
             <h2>Experience</h2>
 
             <ul class="experience">
@@ -90,7 +108,7 @@
 
         <section id="messages" style="display: none">
             <h2>Messages</h2>
-            <ul></ul>
+            <ul class="message-list"></ul>
         </section>
         <footer></footer>
         <script src="js/index.js"></script>

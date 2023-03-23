@@ -12,6 +12,10 @@ const skills = [
     "Node.JS",
     "Customer service",
     "Business Analytics",
+    "Flexbox",
+    "CSS Grid",
+    "Sweet design",
+    "ugly colors",
 ];
 
 const skillsSection = document.getElementById("skills");

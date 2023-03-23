@@ -1,9 +1,13 @@
 body {
-    background-color: chartreuse;
+    background-color: #666;
     color: hotpink;
     font-family: "Raleway", sans-serif;
+    margin: 0 10px;
+    width: 100vw;
 }
-
+html {
+    width: 100vw;
+}
 section {
     margin: 5rem;
     padding: 20px;
@@ -30,19 +34,6 @@ h2 {
     list-style-type: none;
 }
 
-#skills li {
-    text-align: center;
-    border: 1px dashed brown;
-    margin: 20px 0;
-    padding: 50px;
-    list-style-type: none;
-    border-radius: 500px;
-    max-width: fit-content;
-}
-#skills li:hover {
-    background-color: black;
-    color: white;
-}
 label {
     background-color: blanchedalmond;
     color: darkgoldenrod;
@@ -83,7 +74,6 @@ placeholder {
     color: green;
 }
 .edit-button {
-    padding: 50px;
     background-color: dodgerblue;
 }
 a {
@@ -94,4 +84,69 @@ a:hover {
 }
 a:visted {
     color: purple;
+}
+.nav-item {
+    display: inline;
+    padding: 10px;
+}
+.nav-list {
+    background-color: dodgerblue;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+}
+#skills {
+    max-width: 75%;
+}
+#skills ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+#skills li {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px;
+    text-align: center;
+    border: 1px dashed brown;
+    margin: 20px 0;
+    padding: 50px;
+    list-style-type: none;
+    border-radius: 500px;
+}
+#skills li:hover {
+    background-color: black;
+    color: white;
+}
+.message-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+#messages li {
+    display: inline;
+    margin: 20px 10px;
+}
+
+@media screen and (max-width: 900px) {
+    h1 {
+        color: chartreuse;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    p {
+        font-size: 3rem;
+    }
+    img {
+        border-radius: 0px;
+    }
+    h1 {
+        color: firebrick;
+    }
 }
