@@ -96,3 +96,51 @@ messageForm.addEventListener("submit", (event) => {
 
     messageForm.reset();
 });
+
+//utility function for getting date from github data
+const dateFixer = (date) => {
+    return date.slice(0, 10);
+};
+
+// Method for getting info from github
+const githubRequest = new XMLHttpRequest();
+githubRequest.open("GET", "https://api.github.com/users/WaltersMatthew/repos");
+githubRequest.send();
+githubRequest.addEventListener("load", () => {
+    const repositories = JSON.parse(githubRequest.responseText);
+    console.log(repositories);
+    // selecting ul in projects section
+    const projectSection = document.getElementById("projects");
+    const projectList = projectSection.querySelector("ul");
+    // iterating over repositories array to display repo data
+    for (let i = 0; i < repositories.length; i++) {
+        const project = document.createElement("li");
+
+        const projectLink = document.createElement("a");
+        projectLink.innerText = repositories[i].name;
+        projectLink.href = repositories[i].html_url;
+        projectLink.target = "_blank";
+
+        const projectDescription = document.createElement("p");
+        projectDescription.innerText = repositories[i].description;
+
+        const projectDate = document.createElement("p");
+        projectDate.innerText = `last pushed : ${dateFixer(
+            repositories[i].pushed_at
+        )}`;
+
+        const language = document.createElement("p");
+        language.innerText = repositories[i].language;
+
+        project.appendChild(projectLink);
+        project.appendChild(projectDate);
+        project.appendChild(projectDescription);
+        project.appendChild(language);
+        projectList.appendChild(project);
+
+        //styling
+        project.style.listStyleType = "none";
+        project.style.borderBottom = "1px solid black";
+        project.style.margin = "1rem 0";
+    }
+});
