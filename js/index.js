@@ -103,44 +103,49 @@ const dateFixer = (date) => {
 };
 
 // Method for getting info from github
-const githubRequest = new XMLHttpRequest();
-githubRequest.open("GET", "https://api.github.com/users/WaltersMatthew/repos");
-githubRequest.send();
-githubRequest.addEventListener("load", () => {
-    const repositories = JSON.parse(githubRequest.responseText);
-    console.log(repositories);
-    // selecting ul in projects section
-    const projectSection = document.getElementById("projects");
-    const projectList = projectSection.querySelector("ul");
-    // iterating over repositories array to display repo data
-    for (let i = 0; i < repositories.length; i++) {
-        const project = document.createElement("li");
+fetch("https://api.github.com/users/WaltersMatthew/repos")
+    .then((response) => response.json())
+    .then((repositories) => {
+        console.log(repositories);
+        // selecting ul in projects section
+        const projectSection = document.getElementById("projects");
+        const projectList = projectSection.querySelector("ul");
+        // iterating over repositories array to display repo data
+        for (let i = 0; i < repositories.length; i++) {
+            const project = document.createElement("li");
 
-        const projectLink = document.createElement("a");
-        projectLink.innerText = repositories[i].name;
-        projectLink.href = repositories[i].html_url;
-        projectLink.target = "_blank";
+            const projectLink = document.createElement("a");
+            projectLink.innerText = repositories[i].name;
+            projectLink.href = repositories[i].html_url;
+            projectLink.target = "_blank";
 
-        const projectDescription = document.createElement("p");
-        projectDescription.innerText = repositories[i].description;
+            const projectDescription = document.createElement("p");
+            projectDescription.innerText = repositories[i].description;
 
-        const projectDate = document.createElement("p");
-        projectDate.innerText = `last pushed : ${dateFixer(
-            repositories[i].pushed_at
-        )}`;
+            const projectDate = document.createElement("p");
+            projectDate.innerText = `last pushed : ${dateFixer(
+                repositories[i].pushed_at
+            )}`;
 
-        const language = document.createElement("p");
-        language.innerText = repositories[i].language;
+            const language = document.createElement("p");
+            language.innerText = repositories[i].language;
 
-        project.appendChild(projectLink);
-        project.appendChild(projectDate);
-        project.appendChild(projectDescription);
-        project.appendChild(language);
-        projectList.appendChild(project);
+            project.appendChild(projectLink);
+            project.appendChild(projectDate);
+            project.appendChild(projectDescription);
+            project.appendChild(language);
+            projectList.appendChild(project);
 
-        //styling
-        project.style.listStyleType = "none";
-        project.style.borderBottom = "1px solid black";
-        project.style.margin = "1rem 0";
-    }
-});
+            //styling
+            project.style.listStyleType = "none";
+            project.style.borderBottom = "1px solid black";
+            project.style.margin = "1rem 0";
+        }
+    })
+    .catch((error) => {
+        console.warn(error);
+        const projectSection = document.getElementById("projects");
+        const errorMessage = document.createElement("h1");
+        errorMessage.innerText = `There was an error! Github error message: ${error.message}`;
+        projectSection.appendChild(errorMessage);
+    });
