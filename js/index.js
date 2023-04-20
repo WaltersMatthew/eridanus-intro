@@ -106,7 +106,7 @@ const dateFixer = (date) => {
 fetch("https://api.github.com/users/WaltersMatthew/repos")
     .then((response) => response.json())
     .then((repositories) => {
-        console.log(repositories);
+        // console.log(repositories);
         // selecting ul in projects section
         const projectSection = document.getElementById("projects");
         const projectList = projectSection.querySelector("ul");
@@ -143,9 +143,15 @@ fetch("https://api.github.com/users/WaltersMatthew/repos")
         }
     })
     .catch((error) => {
-        console.warn(error);
+        console.error(error);
         const projectSection = document.getElementById("projects");
-        const errorMessage = document.createElement("h1");
-        errorMessage.innerText = `There was an error! Github error message: ${error.message}`;
-        projectSection.appendChild(errorMessage);
+        if (!projectSection) {
+            console.error(
+                `Cannot display error message: project section with id "projects" not found.`
+            );
+        } else {
+            const errorMessage = document.createElement("h1");
+            errorMessage.innerText = `There was an error! Github error message: ${error.message}`;
+            projectSection.appendChild(errorMessage);
+        }
     });

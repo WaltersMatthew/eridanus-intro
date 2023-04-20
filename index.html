@@ -2,6 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8" />
+        <meta lang="english" />
         <meta name="author" content="Matt Walters" />
         <meta name="viewport" content="width=device-width,initial-scale=1"        <title>CTD Portfolio</title>
         <link rel="stylesheet" href="css/index.css" />
@@ -11,10 +12,12 @@
             href="https://fonts.googleapis.com/css2?family=Raleway:wght@100&family=Seaweed+Script&display=swap"
             rel="stylesheet"
         />
+        <title>Matt Walters Professional Portfolio</title>
     </head>
     <body>
         <nav>
             <ul class="nav-list">
+                <li class="nav-item">Matthew Walters</li>
                 <li class="nav-item">
                     <a href="#about">About</a>
                 </li>
@@ -28,13 +31,16 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="www.google.com">Contact Me</a>
+                    <a href="#projects">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#message-form">Leave a message</a>
                 </li>
             </ul>
         </nav>
         <h1>Matthew Walters</h1>
 
-        <img src="https://placekitten.com/300/300" />
+        <img src="https://placekitten.com/300/300" alt="me in a light blue suit"/>
         <section id="about">
             <h2>About</h2>
             <p>
@@ -90,7 +96,7 @@
             </ol>
         </section>
 
-        <section>
+        <section id="message-form">
             <h2>Leave a Message</h2>
             <form name="leave_message">
                 <label for="usersName">Your Name</label>
@@ -101,7 +107,7 @@
                     required="true"
                 />
                 <br />
-                <label for="usersEmail">Your Email</label>
+                <label for="email">Your Email</label>
                 <input type="email" name="usersEmail" required="true" />
                 <br />
                 <label for="usersMessage">Your Message</label>
